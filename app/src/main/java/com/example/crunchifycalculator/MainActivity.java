@@ -1,7 +1,7 @@
 package com.example.crunchifycalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import java.lang.Math;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
-            buttonMul, button10, buttonC, buttonEqual, buttonCE;
+            buttonMul, button10, buttonC, buttonEqual, buttonCE, buttonSQRT;
     EditText crunchifyEditText;
 
     float mValueOne, mValueTwo;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         buttonEqual = (Button) findViewById(R.id.buttoneql);
         crunchifyEditText = (EditText) findViewById(R.id.edt1);
         buttonCE = (Button) findViewById(R.id.buttonCE);
+        buttonSQRT = (Button) findViewById(R.id.buttonsqrt);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -206,5 +207,12 @@ public class MainActivity extends AppCompatActivity {
                 crunchifyEditText.setText(crunchifyEditText.getText() + ".");
             }
         });
+
+        buttonSQRT.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                crunchifyEditText.setText((int) Math.sqrt(mValueOne));
+            }
+        }));
     }
 }
