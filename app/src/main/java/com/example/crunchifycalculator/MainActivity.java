@@ -211,7 +211,8 @@ public class MainActivity extends AppCompatActivity {
         buttonSQRT.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                crunchifyEditText.setText((int) Math.sqrt(mValueOne));
+                mValueOne = Float.parseFloat(crunchifyEditText.getText() + "");
+                crunchifyEditText.setText((Math.sqrt(mValueOne)) + "");
             }
         }));
     }
